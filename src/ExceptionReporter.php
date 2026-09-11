@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Log;
 use Throwable;
 
 /**
- * Global exception notifier.
+ * Global exception reporter.
  *
  * Renders an application-owned Blade view with exception context and
  * emails the resulting HTML through MailgunHttpService.
@@ -58,9 +58,9 @@ class ExceptionReporter
                     'status' => $result['status'] ?? null,
                 ]);
             }
-        } catch (Throwable $notifierException) {
-            // Critical: never let the notifier throw a second exception.
-            Log::error('Exception notification failed: ' . $notifierException->getMessage());
+        } catch (Throwable $reporterException) {
+            // Critical: never let the reporter throw a second exception.
+            Log::error('Exception notification failed: ' . $reporterException->getMessage());
         }
     }
 

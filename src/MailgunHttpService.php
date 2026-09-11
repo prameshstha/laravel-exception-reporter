@@ -14,7 +14,7 @@ use Throwable;
  *
  * Sends email directly through the Mailgun HTTP API using Guzzle and is
  * completely independent of the application's Laravel Mail configuration.
- * The exception notifier is only one consumer of this service.
+ * The exception reporter is only one consumer of this service.
  *
  * Written against PHP 8.0 so the same release line runs on Laravel 8, 12
  * and 13 applications.
